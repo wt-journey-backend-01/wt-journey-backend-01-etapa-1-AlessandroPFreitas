@@ -1,0 +1,6 @@
+{
+    "lanches": [
+        {"name": "DevBurger Clássico", "ingredientes": "Pão brioche, Carne 150g, Queijo cheddar, Alface americana, Tomate fresco, Molho especial"},
+        {"name": "Burger de Bacon", "ingredientes": "Pão australiano, Carne 180g, Queijo prato, Bacon crocante, Cebola caramelizada, Molho barbecue"}
+    ]
+}
