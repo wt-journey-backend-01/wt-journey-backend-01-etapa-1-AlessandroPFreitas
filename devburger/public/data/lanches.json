@@ -1,6 +1,20 @@
-{
-    "lanches": [
-        {"name": "DevBurger Clássico", "ingredientes": "Pão brioche, Carne 150g, Queijo cheddar, Alface americana, Tomate fresco, Molho especial"},
-        {"name": "Burger de Bacon", "ingredientes": "Pão australiano, Carne 180g, Queijo prato, Bacon crocante, Cebola caramelizada, Molho barbecue"}
-    ]
-}
+[
+  {
+    "id": 1,
+    "nome": "DevBurger Clássico",
+    "ingredientes": "Pão brioche, Carne 150g, Queijo cheddar, Alface americana, Tomate fresco, Molho especial.",
+    "imgUrl": "https://picsum.photos/seed/xburger/300/200"
+  },
+  {
+    "id": 2,
+    "nome": "Burger de Bacon",
+    "ingredientes": "Pão australiano, Carne 180g, Queijo prato, Bacon crocante, Cebola caramelizada, Molho barbecue.",
+    "imgUrl": "https://loremflickr.com/300/200/burger,salad"
+  },
+  {
+    "id": 3,
+    "nome": "Commit Veggie",
+    "ingredientes": "Pão integral, Burger de grão de bico, Queijo vegano, Rúcula, Tomate seco, Maionese de ervas.",
+    "imgUrl": "https://loremflickr.com/300/200/burger,cheese"
+  }
+]
