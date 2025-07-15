@@ -6,22 +6,22 @@
     <title>Contato - DevBurger</title>
 </head>
 <body>
-   <form action="">
+   <form action="/contato" method="post">
     <div class="">
         <label for="name">Nome:</label>
-        <input type="text" id="name">
+        <input type="text" id="name" name="nome">
     </div>
     <div class="">
         <label for="email">Email:</label>
-        <input type="email" id="email">
+        <input type="email" id="email" name="email">
     </div>
     <div class="">
         <label for="subject">Assunto:</label>
-        <textarea  id="subject"> </textarea>
+        <textarea  id="subject" name="assunto"> </textarea>
     </div>
     <div class="">
         <label for="message">Mensagem:</label>
-        <textarea id="message"></textarea>
+        <textarea id="message" name="mensagem"></textarea>
     </div>
     <button type="submit">Enviar</button>
    </form>
