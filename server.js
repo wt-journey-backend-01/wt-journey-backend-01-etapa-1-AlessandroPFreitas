@@ -10,8 +10,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  const filePath = path.join(__dirname, "views", "contato.html");
-  res.sendFile(filePath);
+  const filePath = path.join(__dirname, "views", "index.html");
+  res.status(200).type("html").sendFile(filePath);
 });
 
 app.get("/api/lanches", (req, res) => {
@@ -42,7 +42,7 @@ app.get("/sugestao", (req, res) => {
       <div id="modal" style="display:block;">
         <h1>Obrigado pela sugestão, ${nome}!</h1>
         <p>Seu lanche: ${ingredientes}</p>
-        <button onclick="window.location.href='/'">Voltar ao início</button>
+        <a href='/'>Voltar ao início</a>
       </div>
       <script>
         // Aqui você pode colocar o JavaScript do modal se quiser
@@ -56,7 +56,7 @@ app.get("/sugestao", (req, res) => {
 
 app.get("/contato", (req, res) => {
   const filePath = path.join(__dirname, "views", "contato.html");
-  res.sendFile(filePath);
+  res.status(200).type("html").sendFile(filePath);
 });
 
 app.post("/contato", (req, res) => {
@@ -65,16 +65,18 @@ app.post("/contato", (req, res) => {
   const assunto = req.body.assunto;
   const mensagem = req.body.mensagem;
 
-  res.redirect(`/contato-recebido?nome=${nome}&email=${email}&assunto=${assunto}&mensagem=${mensagem}`)
+  res.redirect(
+    `/contato-recebido?nome=${nome}&email=${email}&assunto=${assunto}&mensagem=${mensagem}`
+  );
 });
 
 app.get("/contato-recebido", (req, res) => {
- const nome = req.query.nome;
+  const nome = req.query.nome;
   const email = req.query.email;
   const assunto = req.query.assunto;
   const mensagem = req.query.mensagem;
 
-   const html = `
+  const html = `
   <html>
     <head>
       <title>Contato</title>
@@ -83,7 +85,11 @@ app.get("/contato-recebido", (req, res) => {
       </style>
     </head>
     <body>
-<h1> Test ${nome}</h1>
+<h1>  ${nome}</h1>
+<h1>  ${email}</h1>
+<h1>  ${assunto}</h1>
+<h1>  ${mensagem}</h1>
+  <a href='/'>Voltar ao início!</a>
       <script>
         // Aqui você pode colocar o JavaScript do modal se quiser
       </script>
@@ -91,7 +97,7 @@ app.get("/contato-recebido", (req, res) => {
   </html>
 `;
 
-res.send(html);
+  res.send(html);
 });
 
 app.listen(PORT, () => {
